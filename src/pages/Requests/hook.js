@@ -14,8 +14,6 @@ const useRequestHook = ({ user, token }) => {
 
     const transformData = async (data) => {
 
-        console.log(data, 'auauua')
-
         return data.map((e) => {
             let nameUser = e.id
             if (user.role === 'empleado') nameUser = user.nombre
@@ -85,8 +83,6 @@ const useRequestHook = ({ user, token }) => {
 
     const createRequestHandle = async (data) => {
 
-        console.log(data, 'sile')
-
         const response = await createRequest({ token, user, data })
 
         if (!response) return alert('No se pudo crear la solicitud')
@@ -106,8 +102,6 @@ const useRequestHook = ({ user, token }) => {
         const query ={page: 1, limit: 1000}
 
         const response = await getEmpleados({token, user, query })
-
-        console.log(response, 'xd')
 
         setEmpleadoList(response.users)
 

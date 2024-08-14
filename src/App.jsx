@@ -1,12 +1,12 @@
-import { useState } from 'react'
+import {  Suspense, lazy } from 'react';
 
 import './App.css'
 
-import Login from './components/Login/page'
-import Sidebar from './components/Sidebar/page'
-import Users from './pages/Users/page'
-import Perfil from './pages/Perfil/page'
-import Requests from './pages/Requests/page'
+const Login = lazy(() => import('./components/Login/page'));
+const Sidebar = lazy(() => import('./components/Sidebar/page'));
+const Users = lazy(() => import('./pages/Users/page'));
+const Perfil = lazy(() => import('./pages/Perfil/page'));
+const Requests = lazy(() => import('./pages/Requests/page'));
 
 import { useAuth, AuthProvider } from './context/AuthContext';
 
@@ -15,7 +15,9 @@ function AppContent() {
   const { user, currentView } = useAuth();
 
   if (!user) return <div className='container-singIn'>
-    <Login />
+    <Suspense fallback={<div>Loading...</div>}>
+      <Login />
+    </Suspense>
   </div>
 
   return (
@@ -29,10 +31,13 @@ function AppContent() {
           <div className='pages-content'>
             {
               user && (
-                currentView === 'Usuarios' ? <Users /> :
-                  currentView === 'Perfil' ? <Perfil /> :
-                    currentView === 'Solicitudes' ? <Requests /> :
-                      <div>Selecciona una vista</div>
+                <Suspense fallback={<div>Loading content...</div>}>{
+                  currentView === 'Usuarios' ? <Users /> :
+                    currentView === 'Perfil' ? <Perfil /> :
+                      currentView === 'Solicitudes' ? <Requests /> :
+                        <div>Selecciona una vista</div>
+                }
+                </Suspense>
               )
             }
           </div>

@@ -45,7 +45,6 @@ function Requests() {
   const onOpen = () => setIsOpen(true);
   const onClose = () => setIsOpen(false);
 
-  console.log(empleadosList, 'yujahs')
 
   let data = requests;
   let colums = ['Código', 'Descripción', 'Resumen', 'Empleado', 'Acciones']
