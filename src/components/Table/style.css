@@ -1,0 +1,45 @@
+.table-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 30px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+
+.column {
+  margin-right: 50px;
+
+}
+
+
+.bgGradient {
+  color: #ff00ff;
+  padding: 5px;
+  margin-left: 20px;
+  width: 30px;
+  border-radius: 5px;
+  
+}
+
+
+.row-ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin-right: 4px;
+}
+
+.actions-row {
+  display: inline;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 5px;
+  margin-left: 5px;
+}

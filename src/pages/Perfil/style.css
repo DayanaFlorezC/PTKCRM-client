@@ -1,0 +1,32 @@
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    padding: 20px;
+    margin: 10px;
+    background-color: #ede8e8;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+
+    .info-profile{
+        margin-top: 10px;
+
+        span {
+            justify-content: space-between;
+            flex-direction: column;
+            display: flex;
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+    }
+
+
+    
+}

@@ -1,0 +1,15 @@
+.pagination-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+
+}
+
+.currentPage{
+    margin-left: 10px;
+    margin-right: 10px;
+}
